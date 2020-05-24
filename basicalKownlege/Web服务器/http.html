@@ -1,0 +1,40 @@
+<!-- 一\请求报文 
+    1.请求方式
+    一种是GET 
+    一种POST 发送数据 用户注册常用安全
+
+    2.请求低脂
+    app.on('request',('req','res')=>{
+        log(req.hearder)报文
+        log(req.url)地址
+        log(req.method)方式
+    })
+
+    3.
+    http状态码
+    200成功
+    404没有找到资源
+    400客户端请求语法错误
+    500服务端错误
+
+    内容类型5个
+    text/html
+    text/css
+    res.writeHead(200, {
+        'content-type': 'text/html ;chartset = utf8'
+    });
+
+    4.post请求参数
+
+
+    5.路由
+    客户端请求的地址和服务端的代码地址一致
+
+    6.静态资源\动态资源
+    (http  http.createSever) (path.join用于拼接路径)  (fs.readFile) (mime.gettype) (url.parse(req.url))
+    (绝对路径获取语法 _dirname+'public'+pathname)
+
+    二、Node异步编程
+    1.同步Api异步API
+    
+-->
