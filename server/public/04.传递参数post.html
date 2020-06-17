@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        <input type="text" name="" id="usename">
+    </p>
+    <p>
+        <input type="age" name="" id="age">
+    </p>
+    <p>
+        <button id="btn">
+            提交
+        </button>
+    </p>
+
+
+    <script>
+        var usename = document.getElementById('usename');
+        var age = document.getElementById('age');
+        var btn = document.getElementById('btn');
+
+        btn.onclick = function() {
+            var xhr = new XMLHttpRequest();
+            var nameValue = usename.value;
+            var ageValue = age.value;
+
+            // 拼接用来传送的参数
+            var params = 'usename=' + nameValue + '&age=' + ageValue;
+            // 配置ajax对象
+            xhr.open('post', "http://locatalhost:3000/get");
+
+            // 设置请求参数的格式,post必须有的
+            xhr.setRequestHeader('Content-Type', 'application/X-www-form-urlencoded')
+                // 发送请求
+            xhr.send(params);
+        }
+
+        xhr.onload = function() {
+            console.log(xhr.responseText);
+
+        }
+    </script>
+</body>
+
+</html>

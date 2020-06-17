@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js\template-web.js"></script>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <script id="tpl" type="text/html">
+        <h1>{{usename},{age}}</h1>
+    </script>
+
+    <script type="text/javascript">
+        var html = ('tpl', {
+            usename: '张三',
+            age: 18
+        });
+        document.getElementById('container').innerHTML = html;
+    </script>
+</body>
+
+</html>

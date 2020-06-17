@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // readyState响应的  
+        // 0--请求未初始化(还没有调用open()) 
+        // 1--请求已建立,还没调用send()
+        // 2--请求已发送
+        // 3--请求处理中,通常响应部分数据可用
+        // 4--响应已经完成,可以获取使用服务器的响应
+        // onreadstatechange
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('get', 'http://localhost:3000/readystate');
+
+        xhr.send();
+
+        xhr.onreadystatechange = function() {
+
+        }
+    </script>
+</body>
+
+</html>

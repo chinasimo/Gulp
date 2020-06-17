@@ -1,1 +1,52 @@
-<!-- 创建集合--1.对集合设定规则2.创建集合  创建mongoose.Schema构造函数的实例即可创建集合-->
+<!-- 一\创建集合--
+    1.对集合设定规则 创建mongoose.Schema构造函数的实例即可创建集合
+    2.创建集合  const Course = mongoose.model('Course', courseSchema)
+    3.创建文档   
+    Course.create({
+    name: '自学',
+    author: '豪哥',
+    isPublished: true
+}, (err, result) => {
+    console.log(err);
+    console.log(result);
+
+
+
+    二\操作
+    4.导入数据
+    mongoimport -d -c -file
+
+    5.查找文档
+    find(里面的参数是查询条件)
+     
+    大小
+    user.find({age:{$gt:10,$lt:15}}).then(result=>log(result))
+    包含
+    user.find({hobbies:{$in['打篮球']}}).then(result=>log(result))
+    选择要查询字段
+    user.find().select('name email').then(result=>log(result))
+    按照年龄升序 -age降序
+    user.find().sort('age').then(result=>log(result))
+    skip跳过多少,limit限制查询数量
+    user.find().skip(2).limit(2).then(result=>log(result))
+
+    6.删除文档
+    user.findoneAndDelete({}).then(result=>log(result))
+    user.deleteMany({个数}).then(result=>log(result))
+
+    7.更新
+    user.updateone({查询条件},{要修改的值}).then(result=>log(result))
+    user.updatMany({查询条件},{要修改的值}).then(result=>log(result))
+
+    8.mongoose验证
+    创建集合规则时,设置当前字段验证规则   取出字符串空格trim
+    required:true 必须传递字段
+    minlength:3 字符串最小长度
+    maxlength:20 字符串最大长度
+    min:2 数值最小为2
+
+    三\集合关联
+    1.集合关联实现
+    
+
+-->
